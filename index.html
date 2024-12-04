@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .box {
+      border: 2px solid #ff0000;
+      border-bottom: none;
+      padding: 20px;
+      width: 50%;
+      height: 10%;
+      text-align: center;
+    }
+
+    .box2 {
+      border: 2px solid #ff0000;
+      padding: 20px;
+      width: 50%;
+      height: 80%;
+      text-align: center;
+    }
+
+    @keyframes flashColors {
+        0% { color: red; }
+        25% { color: blue; }
+        50% { color: green: }
+        75% { color: yellow; }
+        100% { color: red; }
+    }
+
+    .flashing-text {
+        animation: flashColors 2s infinite;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #ff0000;
+        margin: 20px 0;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    img {
+        display: none;
+        margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p class="flashing-text">
+        Olgi's Dwelling</p>
+  </div>
+  <div class="box2">
+    <p>Daily Big News
+        <hr>
+    </p>
+        <button id="show-gif-button">Display Rodent</button>
+        <img id="gif-image" src="rodents/tenor.gif" alt="GIF Image" />
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
