@@ -4,13 +4,13 @@ var detection2 = document.getElementById('detection2');
 
 // Detect web browser
 if (navigator.userAgent.includes("Chrome")) {
-    detection.innerText = "chrome? nice adblocker, oh wait...";
+    detection.innerText = "nice adblocker, oh wait...";
 } else if (navigator.userAgent.includes("Vivaldi")) {
-    detection.innerText = "vivaldi? what the hell is a vivaldi?";
+    detection.innerText = "vivaldi? I like his music don't know about the browser";
 } else if (navigator.userAgent.includes("Safari")) {
     detection.innerText = "let me get this straight, you're *choosing* to use safari?";
 } else if (navigator.userAgent.includes("AppleWebKit")) {
-    detection.innerText = "safari?? you must be using macOS... how many windows do you have stacked ontop of eachother right now?";
+    detection.innerText = "safari?? you must be using macOS";
 } else if (navigator.userAgent.includes("Edge") || navigator.userAgent.includes("Edg")) {
     detection.innerText = "you really chose edge?";
 } else if (navigator.userAgent.includes("Firefox") || navigator.userAgent.includes("Mozilla")) {
@@ -30,9 +30,6 @@ if (navigator.userAgent.includes("Linux")) {
 
 // load rodent
 function loadRandomImage() {
-    const images = ['rodents/tenor.gif'];
-    const randomIndex = Math.floor(Math.random() * images.length);
-    document.getElementById('gif-image').src = images[randomIndex];
 }
 
 // Run the checkBrowser, checkOS and load image functions when the page loads
