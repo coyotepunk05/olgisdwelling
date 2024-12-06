@@ -1,34 +1,46 @@
-// Function to detect the browser and display a message
-function checkBrowser() {
-  const userAgent = navigator.userAgent.toLowerCase();
-  const browserMessageElement = document.getElementById('browser-message');
-  
-  if (userAgent.indexOf('firefox') > -1) {
-    browserMessageElement.textContent = 'Thanks for using Firefox!';
-  } else {
-    browserMessageElement.textContent = 'Use Firefox!';
-  }
+// Get detection ids
+var detection = document.getElementById('detection');
+var detection2 = document.getElementById('detection2');
+
+// Detect web browser
+if (navigator.userAgent.includes("Chrome")) {
+    detection.innerText = "chrome? nice adblocker, oh wait...";
+} else if (navigator.userAgent.includes("Vivaldi")) {
+    detection.innerText = "vivaldi? what the hell is a vivaldi?";
+} else if (navigator.userAgent.includes("Safari")) {
+    detection.innerText = "let me get this straight, you're *choosing* to use safari?";
+} else if (navigator.userAgent.includes("AppleWebKit")) {
+    detection.innerText = "safari?? you must be using macOS... how many windows do you have stacked ontop of eachother right now?";
+} else if (navigator.userAgent.includes("Edge") || navigator.userAgent.includes("Edg")) {
+    detection.innerText = "you really chose edge?";
+} else if (navigator.userAgent.includes("Firefox") || navigator.userAgent.includes("Mozilla")) {
+    detection.innerText = "thanks for using firefox!";
+} else {
+    detection.innerText = "error detecting web browser...";
 }
 
-// Function to detect the OS and display a message
-function checkOS() {
-  const platform = navigator.platform.toLowerCase();
-  const osMessageElement = document.getElementById('os-message');
-
-  if (platform.indexOf('linux') > -1) {
-    osMessageElement.textContent = 'Thanks for using Linux!';
-  } else {
-    osMessageElement.textContent = 'Use Linux!';
-  }
+// Detect operating system
+if (navigator.userAgent.includes("Linux")) {
+    detection2.innerText = "thanks for using linux!";
+} else if (navigator.userAgent.includes("Android")) {
+    detection2.innerText = "android user detected...";
+} else {
+    detection2.innerText = "switch to linux (˶ᵔ ᵕ ᵔ˶)";
 }
 
-// Run the checkBrowser and checkOS functions when the page loads
+// load rodent
+function loadRandomImage() {
+    const images = ['rodents/tenor.gif'];
+    const randomIndex = Math.floor(Math.random() * images.length);
+    document.getElementById('gif-image').src = images[randomIndex];
+}
+
+// Run the checkBrowser, checkOS and load image functions when the page loads
 window.onload = function() {
-  checkBrowser();
-  checkOS();
-  
-  document.getElementById('show-gif-button').addEventListener('click', function() {
-    const gifImage = document.getElementById('gif-image');
-    gifImage.style.display = 'block';
-  });
+
+    document.getElementById('show-gif-button').addEventListener('click', function() {
+        const gifImage = document.getElementById('gif-image');
+        gifImage.style.display = 'block';
+        loadRandomImage(); // Call this to load a random image
+    });
 };
