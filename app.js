@@ -6,13 +6,13 @@ var detection2 = document.getElementById('detection2');
 if (navigator.userAgent.includes("Chrome")) {
     detection.innerText = "chrome? nice adblocker, oh wait...";
 } else if (navigator.userAgent.includes("Vivaldi")) {
-    detection.innerText = "vivaldi? what the hell is a vivaldi?";
+    detection.innerText = "vivaldi? I like his music";
 } else if (navigator.userAgent.includes("Safari")) {
     detection.innerText = "let me get this straight, you're *choosing* to use safari?";
 } else if (navigator.userAgent.includes("AppleWebKit")) {
-    detection.innerText = "safari?? you must be using macOS... how many windows do you have stacked ontop of eachother right now?";
-} else if (navigator.userAgent.includes("Edge") || navigator.userAgent.includes("Edg")) {
-    detection.innerText = "you really chose edge?";
+    detection.innerText = "safari?? ?";
+} else if (navigator.userAgent.includes("Opera") || navigator.userAgent.includes("OPR")) {
+    detection.innerText = "DO you use opera because it is red or because it spys on you?";
 } else if (navigator.userAgent.includes("Firefox") || navigator.userAgent.includes("Mozilla")) {
     detection.innerText = "thanks for using firefox!";
 } else {
